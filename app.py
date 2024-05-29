@@ -2,5 +2,5 @@ import streamlit as st
 
 st.write("Hello")
 
-openai
-pandas
+import openai
+import pandas
