@@ -6,7 +6,7 @@ prompt1 = st.text_input(label="비밀번호를 입력하세요.", type="password
 
 if st.button("입력하기"):
   key1 = prompt1
-  st.print(key1)
+  st.write(key1)
   
 st.divider()
 
