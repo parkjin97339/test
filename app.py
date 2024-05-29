@@ -10,7 +10,7 @@ if st.button("입력하기"):
   client = OpenAI(api_key=("prompt1"));
   
 if client == "sk-proj-JMjUVeuWPGFC6G0FIOzFT3BlbkFJVdIKAYD2bQZSehJxMcpZ":
-  st.print("hello")
+  st.text_input("123")
   
 st.divider()
 
