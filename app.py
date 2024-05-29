@@ -6,9 +6,11 @@ prompt1 = st.text_input(label="비밀번호를 입력하세요.", type="password
 
 
 if st.button("입력하기"):
-  st.session_state.API
-  client = OpenAI(api_key="prompt1")
-
+  st.session_state.API;
+  client = OpenAI(api_key=("prompt1"));
+  if client = sk-proj-JMjUVeuWPGFC6G0FIOzFT3BlbkFJVdIKAYD2bQZSehJxMcpZ:
+    st.print("hello")
+  
 st.divider()
 
 st.header("무엇이든 물어보세요.")
