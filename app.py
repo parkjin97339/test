@@ -8,7 +8,7 @@ if st.button("입력하기"):
   st.session_state.name
   client = OpenAI(api_key=prompt1)
 
-client = OpenAI(api_key="prompt1")
+client = OpenAI(api_key=prompt1)
 
 st.header("무엇이든 물어보세요.")
 prompt2 = st.text_input("질문")
