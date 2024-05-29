@@ -10,9 +10,9 @@ if st.button("입력하기"):
 
 st.header("무엇이든 물어보세요.")
 prompt2 = st.text_input("질문")
+  client = OpenAI(api_key=prompt1)
 
 if st.button("질문하기"):
-  client = OpenAI(api_key=prompt1);
   response = client.chat.completions.create(
   model="gpt-3.5-turbo",
   messages=[
