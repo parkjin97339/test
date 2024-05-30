@@ -16,7 +16,3 @@ if msg := st.chat_input("What is up?"):
  st.chat_message("user").markdown(msg);
  st.session_state.messages.append({"role": "user", "content": msg}) ;
 
-openai.api_key="sk-proj-ayiAG3gbanA8KDeThPGcT3BlbkFJJyE8PDgSiDiEkJvfHl4m"
-
-user_input = st.text_input("user:", "")
-openai.Completion.create
