@@ -12,9 +12,6 @@ if msg := st.chat_input("What is up?"):
  st.chat_message("user").markdown(msg);
  st.session_state.messages.append({"role": "user", "content": msg}) ;
  
-for msg in st.session_state.messages: 
- with st.chat_message(msg["role"]): 
-
 response = msg
 
 
