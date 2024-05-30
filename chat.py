@@ -5,7 +5,7 @@ from openai import OpenAI
 
 st.header("Chat")
 
-if "messages" not in st.session_state: 
+if "msg" not in st.session_state: 
  st.session_state.messages = []
 
 if msg := st.chat_input("What is up?"): 
