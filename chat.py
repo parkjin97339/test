@@ -14,12 +14,13 @@ if msg := st.chat_input("What is up?"):
 
 for msg in st.session_state.messages: 
  with st.chat_message(msg["role"]): 
- st.markdown(msg["content"])
+  st.markdown(msg["content"])
 
 response = msg
 
-
-st.session_state.messages.append({"role": "assistant", "content": response})
+with st.chat_message("assistant"): 
+ st.markdown(response);
+ st.session_state.messages.append({"role": "assistant", "content": response})
  
 
 
