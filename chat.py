@@ -25,4 +25,5 @@ response = client.chat.completions.create(
     {"role": "user", "content": "LangChain은 무엇을 하는 라이브러리지?"}
   ]
 )
-response
+
+st.write(response.choices[0].message.content)
