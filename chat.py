@@ -18,12 +18,7 @@ if msg := st.chat_input("What is up?"):
 
 client = OpenAI(api_key="sk-proj-ayiAG3gbanA8KDeThPGcT3BlbkFJJyE8PDgSiDiEkJvfHl4m")
 
-response = client.chat.completions.create(
-  model="gpt-3.5-turbo",
-  messages=[
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "LangChain은 무엇을 하는 라이브러리지?"}
-  ]
-)
+message(response)
+
 
 st.write(response.choices[0].message.content)
