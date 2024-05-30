@@ -1,5 +1,5 @@
-import streamlit-chat as st-chat
-from st-chat import message 
+import streamlit_chat as st_chat
+from st_chat import message 
 import streamlit as st
 
 st.header("Chat")
