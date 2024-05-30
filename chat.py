@@ -1,5 +1,4 @@
 import streamlit as st
-!pip install streamlit-chat 
 from streamlit_chat import message 
 
 st.header("Chat")
