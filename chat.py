@@ -18,14 +18,14 @@ if msg := st.chat_input("What is up?"):
 
 client = OpenAI(api_key="sk-proj-ayiAG3gbanA8KDeThPGcT3BlbkFJJyE8PDgSiDiEkJvfHl4m")
 
-assistant = client.assistants.create(
+assistant = client.beta.assistants.create(
   name="똑똑한 비서",
   description="당신은 똑똑한 비서입니다.",
   model="gpt-3.5-turbo"
 )
 assistant
 
-thread = client.threads.create(
+thread = client.beta.threads.create(
   messages=[
     {
       "role": "user",
