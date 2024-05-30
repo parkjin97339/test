@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_chat import message 
 
 st.header("Chat")
 msg = st.chat_input("")
