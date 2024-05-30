@@ -1,4 +1,4 @@
-!pip install streamlit-chat 
+install streamlit-chat 
 from streamlit_chat import message 
 import streamlit as st
 
