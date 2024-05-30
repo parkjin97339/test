@@ -1,3 +1,5 @@
+!pip install streamlit-chat 
+from streamlit_chat import message 
 import streamlit as st
 
 st.header("Chat")
@@ -13,4 +15,4 @@ if msg := st.chat_input("What is up?"):
  st.chat_message("user").markdown(msg);
  st.session_state.messages.append({"role": "user", "content": msg}) ;
 
-
+response = f"Echo: {prompt}"
