@@ -11,4 +11,4 @@ st.session_state.messages.append({"role": "user", "content": msg})
 
 for msg in st.session_state.messages: 
  with st.chat_message(msg["role"]): 
- st.markdown(msg["content"])
+  st.markdown(msg["content"])
