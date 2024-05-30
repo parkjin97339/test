@@ -1,10 +1,10 @@
 import streamlit as st
 
 st.header("Chat")
-message1 = st.chat_input("")
+messages = st.chat_input("")
 
 if "messages" not in st.session_state: 
- st.session_state.messages = [] 
+ st.session_state.messages = [msg] 
  
 for msg in st.session_state.messages: 
  with st.chat_message(msg["role"]): 
