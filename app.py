@@ -1,4 +1,5 @@
 import streamlit as st
+import openai
 from openai import OpenAI
 
 st.header("비밀번호를 적어주세요.")
