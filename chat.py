@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
+import os
 from openai import OpenAI
-
 
 st.header("Chat")
 
@@ -18,20 +18,11 @@ if msg := st.chat_input("What is up?"):
 
 client = OpenAI(api_key="sk-proj-ayiAG3gbanA8KDeThPGcT3BlbkFJJyE8PDgSiDiEkJvfHl4m")
 
-assistant = client.beta.assistants.create(
-  name="똑똑한 비서",
-  description="당신은 똑똑한 비서입니다.",
-  model="gpt-3.5-turbo"
-)
-assistant
-
-thread = client.beta.threads.create(
+response = client.chat.completions.create(
+  model="gpt-3.5-turbo",
   messages=[
-    {
-      "role": "user",
-      "content": msg
-    }
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "LangChain은 무엇을 하는 라이브러리지?"}
   ]
 )
-
-response = f"Echo: {prompt}"
+response
