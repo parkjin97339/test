@@ -47,7 +47,8 @@ if prompt:
     with st.chat_message("assistant"):
         st.markdown(answer)
     st.session_state.messages.append({"role": "assistant", "content": answer})
-if st.button("Thread 지우기"):
+
+if st.button('Thread 지우기'):
     del st.session_state['messages']
-if st.button("대화 기록 지우기"):
+if st.button('대화 기록 지우기'):
     response = client.beta.threads.delete(thread.id)
