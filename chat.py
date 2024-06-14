@@ -2,8 +2,10 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
-
 st.image("https://www.pknu.ac.kr/imageView.do?target=campus&cd=B0000024")
+
+file = st.file_uploader("파일 선택", type=['xlsx'])
+
 def main(): 
   df = pd.read_excel('test1.xlsx')
   st.dataframe(df)
