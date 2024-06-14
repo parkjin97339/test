@@ -48,6 +48,8 @@ if prompt:
         st.markdown(answer)
     st.session_state.messages.append({"role": "assistant", "content": answer})
 
+st.header("Delete")
+
 if st.button('Thread 지우기'):
     del st.session_state['messages']
 if st.button('대화 기록 지우기'):
