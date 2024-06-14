@@ -10,7 +10,7 @@ if st.button('Assistant 새롭게 생성하기'):
     client = OpenAI(api_key=f"{user_api_key}")
     assistant = client.beta.assistants.create(
         instructions="당신은 챗봇입니다. 성실하게 대답해주세요.",
-        model="gpt-4o",
+        model="gpt-3.5-turbo",
     )
     if 'client' not in st.session_state:
         st.session_state.client = client
