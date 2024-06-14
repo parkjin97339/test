@@ -8,7 +8,7 @@ def main():
   df = pd.read_excel('test1.xlsx')
   st.dataframe(df)
   st.table(df)
-  st.table.(df())
+  st.table(df())
   st.write(df())
   st.text(df())
 
