@@ -4,7 +4,7 @@ from PIL import Image
 
 st.image("https://www.pknu.ac.kr/imageView.do?target=campus&cd=B0000024")
 
-file = st.file_uploader("파일 선택", type=['xlsx'])
+file = st.file_uploader(type=['xlsx'])
 
 def main(): 
   df = pd.read_excel('test1.xlsx')
