@@ -24,7 +24,7 @@ if st.button('Assistant 새롭게 생성하기'):
 
 st.header("Thread")
 prompt = st.chat_input("메시지를 입력하세요.")
-if prompt := st.chat_input(): 
+if prompt: 
     st.session_state.messages.append({"role": "user", "content": prompt})
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"]):
