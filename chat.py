@@ -21,7 +21,7 @@ if st.button('Assistant 새롭게 생성하기'):
         model="gpt-4o",
     )
     my_file = client.files.create(
-    file = open("menu.xlsx",'rb'),
+    file = open("menu.csv",'rb'),
     purpose='assistants'
     )
     if 'client' not in st.session_state: # client를 session_state로 저장
