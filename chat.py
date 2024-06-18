@@ -4,8 +4,7 @@ from io import BytesIO
 import pandas as pd
 import numpy as np
 
-url="https://github.com/parkjin97339/test/blob/main/menu.xlsx"
-data = pd.read_excel(url)
+pd.Series([100, 500, 150])
 
 with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
