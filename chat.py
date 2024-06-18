@@ -1,12 +1,12 @@
 import streamlit as st
-import pandas as pd
+import pandas
 from openai import OpenAI
 import requests as rq
 from io import BytesIO
 
 url = "https://github.com/parkjin97339/test/blob/main/menu.xlsx"
 data = rq.get(url).content
-df = pd.read_excel(BytesIO(data))
+df = pandas.read_excel(BytesIO(data))
 
 with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
