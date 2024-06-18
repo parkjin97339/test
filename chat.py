@@ -6,6 +6,9 @@ import requests
 url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
 r = requests.get(url)
 
+with open("titanic.csv",'w') as fo:
+  fo.write(r.text)
+
 with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
     if 'key' not in st.session_state:
