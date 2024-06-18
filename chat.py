@@ -8,8 +8,6 @@ with st.sidebar:
 
 def app():
     st.set_page_config(layout="wide")
-    
-    # Load image from file
     img = Image.open("weebsu.png")
     new_size = (150, 150)
     img = img.resize(new_size)
