@@ -3,7 +3,6 @@ from openai import OpenAI
 from io import BytesIO
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 
 url="https://github.com/parkjin97339/test/blob/main/menu.xlsx"
 data = pd.read_excel(url)
