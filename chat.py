@@ -1,10 +1,14 @@
 import streamlit as st
 import pandas as pd
 from openai import OpenAI
+import requests
 
 
-df = pd.read_excel('https://github.com/parkjin97339/test/blob/main/menu.xlsx', sheet_name='들락날락 메뉴')
-df
+url = "https://github.com/parkjin97339/test/blob/main/menu.xlsx"
+r = requests.get(url)
+
+with open("menu.xlsx",'w') as fo:
+  fo.write(r.text)
 
 with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
@@ -18,6 +22,11 @@ if st.button('Assistant 새롭게 생성하기'):
         instructions="당신의 이름은 백경AI입니다. 친근한 말투로 대답해주세요. 챗봇으로서 성실하게 대답해주세요.",
         model="gpt-4o",
     )
+    my_file = client.files.create(
+    file = open("menu.xlsx",'rb'),
+    purpose='assistants'
+    )
+    my_file
     if 'client' not in st.session_state: # client를 session_state로 저장
         st.session_state.client = client
     if 'assistant' not in st.session_state: # assistant를 session_state로 저장
