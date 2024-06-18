@@ -2,11 +2,9 @@ import streamlit as st
 from PIL import Image
 from openai import OpenAI
 
-st.set_page_config(layout="wide")
-img = Image.open("weebsu.png")
-new_size = (150, 150)
-img = img.resize(new_size)
-st.image(img)
+import requests
+url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
+r = requests.get(url)
 
 with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
