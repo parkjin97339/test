@@ -5,6 +5,15 @@ with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
     if 'key' not in st.session_state:
         st.session_state.key = user_api_key
+
+def app():
+    st.set_page_config(layout="wide")
+    
+    # Load image from file
+    img = Image.open("weebsu.png")
+    new_size = (150, 150)
+    img = img.resize(new_size)
+    st.image(img)
     
 if st.button('Assistant 새롭게 생성하기'):
     client = OpenAI(api_key=user_api_key)
