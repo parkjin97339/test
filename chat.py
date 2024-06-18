@@ -1,23 +1,40 @@
 import streamlit as st
 from openai import OpenAI
-from io import BytesIO
-import pandas as pd
-import numpy as np
-import openpyxl
+from PIL import Image
 
-url = "https://github.com/parkjin97339/test/blob/main/menu.xlsx"
-df= pd.read_excel(url, engine='openpyxl')
+def app():
+    st.set_page_config(layout="wide")
+    
+    # Load image from file
+    img = Image.open("백경이.png")
+    img = img.resize((171,230))
+    st.image(img)
+    
+    history = []
+    st.title("우리 학교의 영원한 친구 백경이")
+    st.subheader("백경이는 부경대의 모든 건물들을 다 알아! 학식당 메뉴도 알고 있지, 뭐든지 물어봐!")
+app()
 
 with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
     if 'key' not in st.session_state:
         st.session_state.key = user_api_key
-
+    
 if st.button('Assistant 새롭게 생성하기'):
     client = OpenAI(api_key=user_api_key)
+    vector_store=client.beta.vector_stores.create(name="TotalFile")
+    with open(file='메뉴와가격.xlsx', mode='r') as file:
+        read_file = file.read()
+        file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+            vector_store_id = vector_store.id,
+            files = read_file
+        )
+
     assistant = client.beta.assistants.create(
         instructions="당신의 이름은 백경AI입니다. 친근한 말투로 대답해주세요. 챗봇으로서 성실하게 대답해주세요.",
         model="gpt-4o",
+        tools=[{"type": "file_search"}],
+        tools_resources={"file_search":{[vector_store.id]}}
     )
     if 'client' not in st.session_state: # client를 session_state로 저장
         st.session_state.client = client
