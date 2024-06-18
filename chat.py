@@ -3,10 +3,10 @@ import pandas as pd
 from openai import OpenAI
 import requests
 
-url = "https://github.com/parkjin97339/test/blob/main/menu.csv"
+url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
 r = requests.get(url)
 
-with open("menu.csv",'w') as fo:
+with open("titanic.csv",'w') as fo:
   fo.write(r.text)
 
 with st.sidebar:
@@ -21,7 +21,7 @@ if st.button('Assistant 새롭게 생성하기'):
         model="gpt-4o",
     )
     my_file = client.files.create(
-      file = open("menu.csv",'rb'),
+      file = open("titanic.csv",'rb'),
       purpose='assistants'
     )
     if 'client' not in st.session_state: # client를 session_state로 저장
