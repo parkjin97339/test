@@ -3,9 +3,7 @@ import pandas as pd
 from openai import OpenAI
 import requests
 
-
-url = "https://github.com/parkjin97339/test/blob/main/menu.xlsx"
-r = requests.get(url)
+r = requests.get('https://github.com/parkjin97339/test/blob/main/menu.xlsx')
 
 with open("menu.xlsx",'w') as fo:
   fo.write(r.text)
@@ -14,7 +12,6 @@ with st.sidebar:
     user_api_key = st.text_input("OpenAI API키를 입력해주세요.", key = "openai_api_key", type="password")
     if 'key' not in st.session_state:
         st.session_state.key = user_api_key
-
 
 if st.button('Assistant 새롭게 생성하기'):
     client = OpenAI(api_key=user_api_key)
@@ -26,7 +23,6 @@ if st.button('Assistant 새롭게 생성하기'):
     file = open("menu.xlsx",'rb'),
     purpose='assistants'
     )
-    my_file
     if 'client' not in st.session_state: # client를 session_state로 저장
         st.session_state.client = client
     if 'assistant' not in st.session_state: # assistant를 session_state로 저장
