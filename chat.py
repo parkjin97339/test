@@ -3,7 +3,7 @@ import pandas as pd
 from openai import OpenAI
 import requests
 
-r = requests.get('https://github.com/parkjin97339/test/blob/main/menu.xlsx')
+r = requests.get('https://github.com/parkjin97339/test/blob/main/menu.csv')
 
 with open("menu.xlsx",'w') as fo:
   fo.write(r.text)
