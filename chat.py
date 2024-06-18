@@ -6,7 +6,7 @@ import requests
 url = "https://github.com/parkjin97339/test/blob/main/menu.csv"
 r = requests.get(url)
 
-with open("menu.xlsx",'w') as fo:
+with open("menu.csv",'w') as fo:
   fo.write(r.text)
 
 with st.sidebar:
