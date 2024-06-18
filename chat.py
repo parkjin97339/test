@@ -3,7 +3,7 @@ import pandas as pd
 from openai import OpenAI
 
 
-df = pd.read_excel('https://github.com/parkjin97339/test/blob/main/menu.xlsx', sheet_name='Sheet1')
+df = pd.read_excel('https://github.com/parkjin97339/test/blob/main/menu.xlsx', sheet_name='들락날락 메뉴')
 df
 
 with st.sidebar:
